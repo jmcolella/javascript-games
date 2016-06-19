@@ -35,9 +35,9 @@ Game.prototype.changeColor = function( target, player ) {
 Game.prototype.checkWinner = function() {
   this.horizontalWinner();
   this.verticalWinner();
-  if( this.winner = this.player1 ) {
+  if( this.winner[0] === this.player1 ) {
     return "player1"
-  } else if( this.winner = this.player2 ){
+  } else if( this.winner[0] === this.player2 ){
     return "player2"
   };
 };
@@ -46,11 +46,10 @@ Game.prototype.horizontalWinner = function() {
   this.board.forEach( function( row ) {
     if( row.join("").includes("xxxx") ) {
       this.winner.push( this.player1 );
-      console.log("player1")
     } else if( row.join("").includes("oooo") ) {
       this.winner.push( this.player2 );
     }
-  })
+  }.bind(this))
 };
 
 Game.prototype.verticalWinner = function() {
@@ -61,5 +60,5 @@ Game.prototype.verticalWinner = function() {
     } else if( row.join().includes("oooo") ) {
       this.winner.push( this.player2 )
     }
-  });
+  }.bind(this));
 };

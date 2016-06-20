@@ -17,10 +17,8 @@ Game.prototype.placeChip = function(targetIndex, parentIndex, player) {
       if( parentIndex == i && targetIndex == j ) {
         if( player == this.player1) {
           this.board[i][j] = "x"
-          console.log(this.board)
         } else {
           this.board[i][j] = "o"
-          console.log(this.board)
         };
       };
     };
@@ -55,9 +53,9 @@ Game.prototype.horizontalWinner = function() {
 Game.prototype.verticalWinner = function() {
   var unzipBoard = _.unzip(this.board);
   unzipBoard.forEach( function( row ) {
-    if( row.join().includes("xxxx") ) {
+    if( row.join("").includes("xxxx") ) {
       this.winner.push( this.player1 )
-    } else if( row.join().includes("oooo") ) {
+    } else if( row.join("").includes("oooo") ) {
       this.winner.push( this.player2 )
     }
   }.bind(this));

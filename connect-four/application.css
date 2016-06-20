@@ -1,28 +1,50 @@
+#title{
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: #7D9099;
+}
+
+#player1-win-message {
+  display: none;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #7D9099;
+  font-weight: bold;
+  margin-top: -1em;
+}
+
+#player2-win-message {
+  display: none;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #7D9099;
+  font-weight: bold;
+  margin-top: -1em;
+}
+
+p {
+  margin-top: -1em;
+}
+
 table {
   border: 2px solid blue;
   background-color: blue;
+  margin: 0 auto;
 }
 
 tr {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border: 1px solid blue;
 }
 
 td {
   border: 1px solid blue;
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   background-color: white;
-}
-
-#player1-win-message {
-  display: none;
-}
-
-#player2-win-message {
-  display: none;
 }
 
 .player1 {

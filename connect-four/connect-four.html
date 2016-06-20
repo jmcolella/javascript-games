@@ -3,12 +3,31 @@
 <head>
   <title>John's Connect Four</title>
   <link type="text/css" rel="stylesheet" href="application.css">
+  <link href='https://fonts.googleapis.com/css?family=Poppins:400,600,700' rel='stylesheet' type='text/css'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <script src="application.js"></script>
   <script src="game.js"></script>
   <script src="underscore.js"></script>
 </head>
 <body>
+  <div id="header">
+
+    <div id="title">
+      <h1>Connect Four</h1>
+    </div>
+
+    <div id="player1-win-message">
+      <p>Player 1 wins!</p>
+      <p>The page will refresh in 5 seconds for another round!</p>
+    </div>
+
+    <div id="player2-win-message">
+      <p>Player 2 wins!</p>
+      <p>The page will refresh in 5 seconds for another round!</p>
+    </div>
+
+  </div>
+
   <table id="board">
     <tr id="row=1">
       <td class="plain cell-1"></td>
@@ -65,14 +84,6 @@
       <td class="plain cell-7"></td>
     </tr>
   </table>
-
-  <div id="player1-win-message">
-    <p>Player 1 wins!</p>
-  </div>
-
-  <div id="player2-win-message">
-    <p>Player 2 wins!</p>
-  </div>
 
 </body>
 </html>

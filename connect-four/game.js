@@ -30,16 +30,6 @@ Game.prototype.changeColor = function( target, player ) {
   $( target ).removeClass( "plain" );
 };
 
-Game.prototype.checkWinner = function() {
-  this.horizontalWinner();
-  this.verticalWinner();
-  if( this.winner[0] === this.player1 ) {
-    return "player1"
-  } else if( this.winner[0] === this.player2 ){
-    return "player2"
-  };
-};
-
 Game.prototype.horizontalWinner = function() {
   this.board.forEach( function( row ) {
     if( row.join("").includes("xxxx") ) {
@@ -50,8 +40,8 @@ Game.prototype.horizontalWinner = function() {
   }.bind(this))
 };
 
-Game.prototype.verticalWinner = function() {
-  var unzipBoard = _.unzip(this.board);
+Game.prototype.verticalWinner = function( board ) {
+  var unzipBoard = _.unzip(board);
   unzipBoard.forEach( function( row ) {
     if( row.join("").includes("xxxx") ) {
       this.winner.push( this.player1 )
@@ -59,4 +49,32 @@ Game.prototype.verticalWinner = function() {
       this.winner.push( this.player2 )
     }
   }.bind(this));
+};
+
+Game.prototype.rotate = function( array, n ) {
+   return array.slice(n, array.length).concat(array.slice(0, n));
+};
+
+Game.prototype.diagonalWinner = function( direction ) {
+  var rotateArray = []
+  this.board.forEach(function( row, index ) {
+    if(direction == "left") {
+      rotateArray.push( this.rotate( row, -(index+1) ) )
+    } else {
+      rotateArray.push( this.rotate( row, (index+1) ) )
+    };
+  }.bind(this));
+  this.verticalWinner( rotateArray);
+};
+
+Game.prototype.checkWinner = function() {
+  this.horizontalWinner();
+  this.verticalWinner( this.board );
+  this.diagonalWinner();
+  this.diagonalWinner("left");
+  if( this.winner[0] === this.player1 ) {
+    return "player1"
+  } else if( this.winner[0] === this.player2 ){
+    return "player2"
+  };
 };

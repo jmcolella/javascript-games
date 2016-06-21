@@ -1,0 +1,23 @@
+table {
+  border: 2px solid red;
+}
+
+tr {
+  width: 200px;
+  height: 200px;
+  border: 1px solid blue;
+}
+
+td {
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+}
+
+.x {
+  background-color: black;
+}
+
+.o {
+  background-color: red;
+}

@@ -10,12 +10,18 @@ $(document).ready(function(){
         game.placeMarker(e.target, game.player1);
         if( game.isWon() === game.player1 ) {
           $("#player1-win-message").show();
+          setTimeout(function(){
+            window.location.reload();
+          }, 5000);
         };
       } else {
         game.makeMove(cellIndex, rowIndex, game.player2);
         game.placeMarker(e.target, game.player2);
         if( game.isWon() === game.player2 ) {
           $("#player2-win-message").show();
+          setTimeout(function(){
+            window.location.reload();
+          }, 5000);
         };
       };
       game.moves += 1

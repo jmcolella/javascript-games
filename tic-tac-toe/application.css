@@ -1,29 +1,60 @@
+#header-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 3em;
+  text-align: center;
+  color: #4250B2;
+}
+
 table {
-  background-color: red;
+  background-color: #4250B2;
+  margin: 0 auto;
 }
 
 tr {
-  width: 200px;
-  height: 200px;
-  /*border: 1px solid blue;*/
+  width: 180px;
+  height: 180px;
   background-color: white;
 }
 
 td {
-  /*border: 1px solid black;*/
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
 }
 
-.marker {
+.marker-x {
   text-align: center;
   font-size: 2em;
+  color: #72B23F;
+  font-family: 'Raleway', sans-serif;
+}
+
+.marker-o {
+  text-align: center;
+  font-size: 2em;
+  color: #FF6A37;
+  font-family: 'Raleway', sans-serif;
 }
 
 #player1-win-message {
   display: none;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  font-weight: bold;
+  color: #72B23F;
+  margin-top: -2em;
 }
 
 #player2-win-message {
   display: none;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  font-weight: bold;
+  color: #FF6A37;
+  margin-top: -2em;
+}
+
+.refresh-message {
+  margin-top: -.5em;
+  color: #4250B2;
+  font-weight: normal;
 }

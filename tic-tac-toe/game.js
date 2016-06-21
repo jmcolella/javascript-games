@@ -23,11 +23,12 @@ Game.prototype.makeMove = function( targetIndex, rowIndex, player ) {
 };
 
 Game.prototype.placeMarker = function( target, player ) {
-  $(target).addClass("marker");
-   $(target).removeClass("plain");
+  $(target).removeClass("plain");
   if( player === this.player1 ) {
+    $(target).addClass("marker-x");
     $(target).text("X");
   } else if( player === this.player2 ) {
+    $(target).addClass("marker-o");
     $(target).text("O");
   };
 };

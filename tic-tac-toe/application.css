@@ -1,19 +1,29 @@
 table {
-  border: 2px solid red;
+  background-color: red;
 }
 
 tr {
   width: 200px;
   height: 200px;
-  border: 1px solid blue;
+  /*border: 1px solid blue;*/
+  background-color: white;
 }
 
 td {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   width: 200px;
   height: 200px;
 }
 
 .marker {
   text-align: center;
+  font-size: 2em;
+}
+
+#player1-win-message {
+  display: none;
+}
+
+#player2-win-message {
+  display: none;
 }
